@@ -4,7 +4,6 @@ draft = false
 title = 'Hello, Chaos Cloud'
 summary = 'Welcome to Chaos Cloud — a blog on language runtimes, software craft, Clojure, Zig, and learning.'
 tags = ['meta', 'announcement']
-categories = ['site']
 +++
 
 Welcome to **Chaos Cloud** — a place where I jot down what I learn while

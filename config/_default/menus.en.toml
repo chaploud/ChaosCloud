@@ -20,11 +20,6 @@
   pageRef = "tags"
   weight = 20
 
-[[main]]
-  name = "Categories"
-  pageRef = "categories"
-  weight = 30
-
 #[[main]]
 #  name = "Parent"
 #  weight = 20

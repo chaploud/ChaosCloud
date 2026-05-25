@@ -19,8 +19,10 @@ Live: https://chaploud.github.io/ChaosCloud/
 | `config/_default/menus.en.toml` | Header / footer menu entries |
 | `config/_default/markup.toml` | Markdown / code highlight |
 | `config/_default/module.toml` | Theme module import |
+| `content/_index.md` | Home page body (rendered when `homepage.layout = "page"`) |
 | `content/posts/<slug>/index.md` | Blog post (page bundle — drop images alongside) |
-| `content/about.md` | Standalone fixed page (not in `/posts/`, not in RSS) |
+| `content/about.md` | Site concept / what Chaos Cloud is |
+| `content/profile.md` | Author bio |
 | `static/` | Files served as-is at site root (favicons, CNAME, etc.) |
 | `assets/` | Pipeline-processed assets (Hugo Pipes) |
 | `layouts/` | Local template overrides (empty → using theme defaults) |
@@ -59,6 +61,18 @@ Optional:
 - `series = ['interpreter-series']`
 - `featured_image = 'cover.jpg'` (alongside `index.md` in the bundle)
 - `showHero = true` / `heroStyle = "big"` to override theme default per article
+
+## Page roles
+
+| Page | Purpose |
+|---|---|
+| `/` | Site landing: hook + recent posts (`content/_index.md`) |
+| `/about/` | What Chaos Cloud is, why it exists, colophon |
+| `/profile/` | Who chaploud is |
+| `/posts/` | Article list (year-grouped) |
+| `/tags/` | Tag index |
+
+Header title "Chaos Cloud" itself links to `/` — no separate Home menu entry needed.
 
 ## Add a fixed page (e.g. `/about/`)
 

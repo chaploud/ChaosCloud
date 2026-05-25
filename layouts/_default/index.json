@@ -1,0 +1,23 @@
+{{/*
+  Override of Blowfish's search index template.
+  Only indexes single article pages (Kind == "page" AND Type == "posts").
+  Excludes home, section lists, taxonomy lists/terms, and fixed pages
+  flagged with `excludeFromSearch = true`.
+*/}}
+{{- $index := slice -}}
+{{- range where (where .Site.RegularPages "Kind" "page") "Type" "posts" -}}
+  {{- if not .Params.excludeFromSearch -}}
+    {{- $section := .Site.GetPage "section" .Section -}}
+    {{- $index = $index | append (dict
+      "date" (.Date | time.Format (.Site.Language.Params.dateFormat | default ":date_long"))
+      "title" (.Title | emojify | safeJS)
+      "section" ($section.Title | emojify | safeJS)
+      "summary" (.Summary | plainify | htmlUnescape | safeJS)
+      "content" (.Plain | safeJS)
+      "permalink" .RelPermalink
+      "externalUrl" .Params.externalUrl
+      "type" .Type
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $index | jsonify -}}

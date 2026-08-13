@@ -1,5 +1,5 @@
 +++
-date = '2026-08-13T12:00:00+09:00'
+date = '2026-08-13T11:00:00+09:00'
 draft = false
 title = "I'm winding down ClojureWasm"
 summary = 'I stopped developing ClojureWasm on August 12, 2026; v1.10.1 is the final release. What I shut down, why I stopped, why zwasm keeps going in its own organization, and what half a year of AI-assisted work on a language runtime actually taught me.'
